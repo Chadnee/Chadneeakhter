@@ -51,7 +51,7 @@ const Contact = () => {
 
             <label className="form-control w-full pb-8">
                 <div className="label">
-                    <span className="label-text text-white text-xl fond-bold">Message?</span>
+                    <span className="label-text text-white text-xl fond-bold">Messagee?</span>
                 </div>
                 <textarea type="email" placeholder="Type your message" name="message" className="text-black h-[100px] textarea border-2 border-teal-400 text-sm input-bordered w-full " />
            </label>
