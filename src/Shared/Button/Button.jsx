@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Button = ({to, text, bgColor = "bg-teal-400" }) => {
+const Button = ({href, text, target, rel, bgColor = "bg-teal-400", textColor = "text-white", bgHover="bg-blue-950", hoverText="text-white", rounded="rounded-md", children }) => {
 
     const [isHovered, setHovered] = useState(false);
 
@@ -18,18 +18,21 @@ const Button = ({to, text, bgColor = "bg-teal-400" }) => {
 
     return (
         
-            <Link
-                        style={linkStyle}
+            <a
+                        style={{boxShadow: "0 0 4px 4px #38a89d" , letterSpacing: ".5px"}}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                             id="square"
-                            className={`relative px-3 py-1 overflow-hidden ${bgColor} text-white font-semibold rounded-md shadow-lg hover:shadow-xl hover:shadow-amber-100 transition-all duration-300 ease-in-out transform hover:scale-105 shadow-amber-100 hover:bg-blue-950`}
-                            to={to}
+                            target={target}
+                            rel={rel}
+                            className={`relative px-10 text-[17px] py-1 overflow-hidden ${bgColor} ${textColor} hover:${hoverText} font-semibold ${rounded}  hover:shadow-xl hover:shadow-amber-100 transition-all duration-300 shadow-lg ease-in-out transform hover:scale-105  hover:${bgHover}`}
+                            href = {href}
                             
                         >
                             {text}
+                            {children}
                             {/* <span className="block px-3 py-1">{text}</span> */}
-                        </Link>
+                        </a>
         
     );
 };

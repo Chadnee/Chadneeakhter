@@ -1,28 +1,18 @@
 import React from 'react';
 import Home from '../../Components/Home/Home/Home';
 import Navbar from '../../Shared/Navbar/Navbar';
+import Footer from '../../Shared/Footer/Footer';
 
 const Main = () => {
-    const onPress = (e) =>{
-        e.preventDefault();
-        const target = window.document.getElementById(e.currentTarget.href.split("#") [1])
-
-        if(target){
-            const headerOffset = 20;
-            const elementPosition = target.getBoundingClientReact().top;
-            const offsetPosition = elementPosition-headerOffset;
-
-            window.scrollBy({
-                top: offsetPosition,
-                behavior: "smooth",
-            })
-        }
-    }
+    
+        
+    
     return (
         <div className='h-full'>
-            <div ><Navbar onPress={onPress}></Navbar></div>
-            <div className='mx-40'>
-            <Home></Home>
+            <div ><Navbar ></Navbar></div>
+            <div className='lg:px-40 md:px-40  px-5 w-full overflow-hidden'>
+            <div className=''><Home></Home></div>
+            <div><Footer></Footer></div>
         </div>
         </div>
     );
