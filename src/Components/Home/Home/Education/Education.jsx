@@ -1,16 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { IoMdSchool } from "react-icons/io";
-import { FaSchool } from "react-icons/fa";
-import { LiaSchoolSolid } from "react-icons/lia";
+import { FaAlignRight, FaCheck, FaCode, FaSchool, FaUniversity } from "react-icons/fa";
+import { LiaSchoolSolid, LiaUniversitySolid } from "react-icons/lia";
 import Aos from 'aos';
 import 'aos/dist/aos.css'; // Import AOS CSS
+import { FaListCheck } from 'react-icons/fa6';
+import { BsCheck2 } from 'react-icons/bs';
+import { FiBookOpen } from 'react-icons/fi';
 
 const Education = () => {
-
-    const leftSectionRef = useRef(null);
-    const rightSectionRef = useRef(null);
-    const [leftVisible, setLeftVisible] = useState(false);
-    const [rightVisible, setRightVisible] = useState(false);
 
     const education = [
         {
@@ -38,8 +36,11 @@ const Education = () => {
             institution: "Senpara High School, Rangpur"
         }
     ];
-
-    const [isHovered, setHovered] = useState(null);
+    const leftSectionRef = useRef(null);
+    const rightSectionRef = useRef(null);
+    const [leftVisible, setLeftVisible] = useState(false);
+    const [rightVisible, setRightVisible] = useState(false);
+ const [isHovered, setHovered] = useState(null);
 
     const handleMouseEnter = (id) => {
         setHovered(id);
@@ -75,7 +76,8 @@ const Education = () => {
     }, []);
 
     return (
-        <div className='mb-28 md:mb-64 lg:mb-64 pt-28'>
+        <div className='mb-40 pt-24 md:pt-0 lg:pt-0'>
+           
             <style>
                 {`
                     /* Fade in from the right */
@@ -110,41 +112,46 @@ const Education = () => {
                     .animate-fadeLeft {
                         animation: fadeLeft 3s forwards;
                     }
+                        .hidden-initially {
+                    opacity: 0; /* Initially hide the section */
+                }
                 `}
             </style>
 
-            <p className='text-6xl lg:text-5xl md:text-6xl font-bold text-center pb-24 md:pb-32 lg:pb-32 text-teal-400'>
-                Education
+            <p className='text-5xl lg:text-5xl md:text-6xl font-bold text-center pb-24 md:pb-32 lg:pb-32 text-white'>
+              Education
             </p>
 
             <div>
                 <div className='flex md:flex-row lg:flex-row flex-col justify-center items-center gap-10 text-center md:text-start lg:text-start lg:gap-48 md:gap-48'>
                     {/* Left section */}
-                    <div className={`flex flex-col ${leftVisible ? 'animate-fadeLeft' : ''}`} ref={leftSectionRef}>
+                    <div className={`flex flex-col ${leftVisible ? 'animate-fadeLeft' : 'hidden-initially'}`} ref={leftSectionRef}>
                         <div>
-                            <p className='uppercase md:text-4xl lg:text-4xl text-xl font-bold text-teal-400 pb-3'>IT Qualification</p>
+                            <p className='uppercase md:text-4xl lg:text-4xl text-xl font-bold text-amber-400 pb-3'>IT Qualification</p>
                             <span className='text-white text-xl'>MERN Full Stack Development</span>
-                            <br /><span className='text-white text-xl'>(JS & React Developer)</span>
+                            <br /><span className='text-white text-xl'>(JS, TS, React and Node Developer)</span>
                         </div>
                         <div className='pt-16'>
-                            <p className='uppercase md:text-4xl lg:text-4xl text-xl font-bold text-teal-400 pb-3'>Course</p>
-                            <span className='text-white text-xl'>Complete Web Development</span>
+                            <p className='uppercase md:text-4xl lg:text-4xl text-xl font-bold text-amber-400 pb-3'>Course</p>
+                            <span className='text-white text-xl'>Complete Web Development - level 1</span>
+                            <br /><span className='text-white text-xl'>(Programming Hero)</span> <br/>
+                            <span className='text-white text-xl'>Appollo Level 2 Web Dev - level-2</span>
                             <br /><span className='text-white text-xl'>(Programming Hero)</span>
                         </div>
                     </div>
 
                     {/* Divider */}
-                    <div className="lg:h-[450px] md:h-[450px] w-[10px] bg-teal-400"></div>
+                    <div className="lg:h-[450px] md:h-[450px] w-[10px] bg-amber-400"></div>
 
                     {/* Right section */}
-                    <div className={`flex flex-col ${rightVisible ? 'animate-fadeRight' : ''}`} ref={rightSectionRef}>
+                    <div className={`flex flex-col ${rightVisible ? 'animate-fadeRight' : 'hidden-initially'}`} ref={rightSectionRef}>
                         <div>
-                            <p className='uppercase md:text-4xl lg:text-4xl text-xl font-bold text-teal-400 pb-3'>BBA (4th year)</p>
+                            <p className='uppercase md:text-4xl lg:text-4xl text-xl font-bold text-amber-400 pb-3'>BBA</p>
                             <span className='text-white text-xl'>Management Information Systems,</span>
                             <br /><span className='text-white text-xl'>University of Dhaka</span>
                         </div>
                         <div className='pt-16'>
-                            <p className='uppercase md:text-4xl lg:text-4xl text-xl font-bold text-teal-400 pb-3'>HSC</p>
+                            <p className='uppercase md:text-4xl lg:text-4xl text-xl font-bold text-amber-400 pb-3'>HSC</p>
                             <span className='text-white text-xl'>(Passing year-2019)</span>
                             <br /><span className='text-white text-xl'>Carmichael College, Rangpur</span>
                         </div>
@@ -152,7 +159,14 @@ const Education = () => {
                 </div>
             </div>
 
-            {/* Commented-out section for education cards */}
+           
+        </div>
+    );
+};
+
+export default Education;
+
+ {/* Commented-out section for education cards */}
             {/* <div className='w:full lg:w-10/12 md:w-10/12 mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-3 gap-5'>
                 {education.map(item =>
                     <div
@@ -172,8 +186,3 @@ const Education = () => {
                     </div>
                 )}
             </div> */}
-        </div>
-    );
-};
-
-export default Education;

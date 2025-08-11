@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Button = ({href, text, target, rel, bgColor = "bg-teal-400", textColor = "text-white", bgHover="bg-blue-950", hoverText="text-white", rounded="rounded-md", children }) => {
+const Button = ({href, text, target, rel, bgColor = "bg-yellow-700", textColor = "text-white", bgHover="bg-blue-950", hoverText="text-white", rounded="rounded-md", children }) => {
 
     const [isHovered, setHovered] = useState(false);
 
@@ -13,13 +13,13 @@ const Button = ({href, text, target, rel, bgColor = "bg-teal-400", textColor = "
         setHovered(false);
     }
     
-    const linkStyle = isHovered ? { boxShadow: "0 0 4px 4px #38a89d" } : {};
+    const linkStyle = isHovered ? { boxShadow: "0 0 4px 4px #b45309" } : {};
 
 
     return (
         
             <a
-                        style={{boxShadow: "0 0 4px 4px #38a89d" , letterSpacing: ".5px"}}
+                        style={{boxShadow: "0 0 4px 4px #2e5c59" , letterSpacing: ".5px"}}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                             id="square"

@@ -1,5 +1,9 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { FaCode } from 'react-icons/fa';
+import { BsCheck2 } from 'react-icons/bs';
+import { FiBookOpen } from 'react-icons/fi';
+import { LiaUniversitySolid } from 'react-icons/lia';
 
 const Contact = () => {
 
@@ -24,7 +28,27 @@ const Contact = () => {
 
     };
     return (
-        <div className='mb-20 pt-28'>
+        <div id="contact" className='mb-20 pt-28'>
+             {/* <div className='lg:mb-52 md:mb-52 mb-36 font-poppins'>
+                <div className="flex justify-center items-center mb-10">
+                    <button className="border text-white  border-amber-500 px-10 lg:px-24 py-4 rounded-full animate-float">
+                        <span>A lots of Project</span>
+                        <span className='flex justify-center items-center gap-1'><span><FaCode></FaCode></span><span>Full Stack Developer (React+JS)</span></span>
+                    </button>
+                </div>
+                <div className="flex justify-center items-center mb-10">
+                    <button className="border text-white  border-amber-500 px-5 lg:px-36 py-4 rounded-full animate-float">
+                        <span className=''>+ Programming Hero</span>
+                        <br /> <span className='flex justify-center items-center gap-2'><span className='text-2xl'><BsCheck2></BsCheck2></span> Complete Web development Course</span>
+                    </button>
+                </div>
+                <div className="flex justify-center items-center mb-10">
+                    <button className="border text-white  border-amber-500 px-24 lg:px-36 py-4 rounded-full animate-float">
+                    <span className='flex justify-center items-center gap-2'><span><FiBookOpen></FiBookOpen></span><span>BBA in MIS</span></span>
+                        <span className='flex justify-center items-center gap-1'><span className='text-xl'><LiaUniversitySolid></LiaUniversitySolid></span>University of Dhaka</span>
+                    </button>
+                </div>
+            </div> */}
             <style>
                 {
                     `
@@ -61,31 +85,47 @@ const Contact = () => {
                     `
                 }
             </style>
-            <p className='font-bold text-5xl uppercase text-center text-teal-400 mb-20 '>Contact</p>
+            <p className='font-bold text-5xl uppercase text-center text-white mb-20 '>Contact</p>
             <div className='w-full lg:w-10/12 md:w-10/12 mx-auto md:mt-0 lg:mt-0 mt-20 '>
                     <form className='text-white' ref={form} onSubmit={sendEmail}>
-                        <label className="form-control w-full md:pb-16 lg:pb-16 pb-10 ">
+                       <div className='flex justify-center items-center gap-4 lg:gap-5'>
+                       <label className="form-control w-full md:pb-10 lg:pb-10 pb-3 ">
                             <div className="label">
-                                <span className="label-text text-teal-400 opacity-80 tracking-wider pl-1 text-xl fond-bold">Name?</span>
+                                {/* <span className="label-text text-amber-400 tracking-wider pl-1 text-xl fond-bold">Name?</span> */}
                             </div>
-                            <input type="text" placeholder="Provide your name" name="user_name" className="text-slate-300 input border-2 rounded-2xl  border-teal-800 h-[40px] text-sm bg-blue-950 bg-opacity-30 input-bordered w-full " required/>
+                            <input style={{boxShadow: "0 0 4px 4px #2e5c59" , letterSpacing: ".5px"}} type="text" placeholder="Name*" name="user_name" className="text-black font-bold input  rounded-lg   h-[px] text-sm  bg-slate-950 bg-opacity-30 input-bordered w-full " required/>
                         </label>
-
-                        <label className="form-control w-full md:pb-16 lg:pb-16 pb-10">
+                        <label className="form-control w-full md:pb-10 lg:pb-10 pb-3 ">
                             <div className="label">
-                                <span className="label-text text-teal-400 opacity-80 tracking-wider pl-1 text-xl fond-bold">Email?</span>
+                                {/* <span className="label-text text-amber-400 tracking-wider pl-1 text-xl fond-bold">Gender?</span> */}
                             </div>
-                            <input type="email" placeholder="Provide your email address" name="user_email" className="text-slate-300 input border-2 rounded-2xl border-teal-800 h-[40px] text-sm bg-blue-950 bg-opacity-30 input-bordered w-full" required/>
+                            <input style={{boxShadow: "0 0 4px 4px #2e5c59" , letterSpacing: ".5px"}} type="text" placeholder="Gender (optional)" name="user_gender" className="text-white font-bold input  rounded-lg   h-[px] text-sm  bg-slate-950 bg-opacity-30 input-bordered w-full "/>
                         </label>
+                       </div>
 
-                        <label className="form-control w-full md:pb-16 lg:pb-16 pb-10">
+                        <div className='flex justify-center items-center gap-4 lg:gap-5'>
+                        <label className="form-control w-full md:pb-10 lg:pb-10 pb-3">
                             <div className="label">
-                                <span className="label-text text-teal-400 opacity-80 tracking-wider pl-1 text-xl fond-bold">Messagee?</span>
+                                {/* <span className="label-text text-amber-400 tracking-wider pl-1 text-xl fond-bold">Email?</span> */}
                             </div>
-                            <textarea type="email" placeholder="Type your message" name="message" className="text-slate-300 h-[100px] textarea border-2 rounded-2xl border-teal-800 text-sm bg-blue-950 bg-opacity-30 input-bordered w-full " required />
+                            <input style={{boxShadow: "0 0 4px 4px #2e5c59" , letterSpacing: ".5px"}} type="email" placeholder="E-mail*" name="user_email" className="text-white font-bold input  rounded-lg  h-[px] text-sm  bg-slate-950 bg-opacity-30 input-bordered w-full" required/>
+                        </label>
+                        <label className="form-control w-full md:pb-10 lg:pb-10 pb-3">
+                            <div className="label">
+                                {/* <span className="label-text text-amber-400 tracking-wider pl-1 text-xl fond-bold">Email?</span> */}
+                            </div>
+                            <input style={{boxShadow: "0 0 4px 4px #2e5c59" , letterSpacing: ".5px"}} type="number" placeholder="Phone (optional)" name="user_phone" className="text-white font-bold input rounded-lg  h-[px] text-sm  bg-slate-950 bg-opacity-30 input-bordered w-full"/>
+                        </label>
+                        </div>
+
+                        <label className="form-control w-full md:pb-10 lg:pb-10 pb-3">
+                            <div className="label">
+                                {/* <span className="label-text text-amber-400 tracking-wider pl-1 text-xl fond-bold">Messagee?</span> */}
+                            </div>
+                            <textarea style={{boxShadow: "0 0 4px 4px #2e5c59" , letterSpacing: ".5px"}} type="text" placeholder="Message*" name="message" className="text-white font-bold h-[120px] textarea rounded-lg  text-sm  bg-slate-950 bg-opacity-30 input-bordered w-full " required />
                         </label>
                         <div className='text-center'>
-                            <button style={{ boxShadow: "0 0 2px 2px #38a89d" }} className='w-full py-1 bg-teal-600 hover:bg-blue-950 font-poppins hover:text-teal-400 ml-2 transition-all duration-300 shadow-lg ease-in-out transform hover:scale-105 mt-12  uppercase  font-bold  border-none pb-1 text-xl rounded-xl text-center '>
+                            <button style={{boxShadow: "0 0 4px 4px #2e5c59" , letterSpacing: ".5px"}} className='w-full py-1  bg-slate-950 bg-opacity-25 hover:bg-blue-950 font-poppins hover:text-amber-400 ml-2 transition-all text-white duration-300 shadow-lg ease-in-out transform hover:scale-105 mt-8  uppercase  font-bold  border-none pb-1 text-xl rounded-xl text-center '>
                                 <input type="submit" value="Send" />
                             </button>
                         </div>

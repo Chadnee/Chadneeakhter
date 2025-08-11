@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { FaCode, FaHome, FaUser, FaGraduationCap, FaTools, FaEnvelope } from 'react-icons/fa'; // Add icons here
+import { FaCode, FaHome, FaUser, FaGraduationCap, FaTools, FaEnvelope, FaMoon, FaBlog, FaFacebook, FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'; // Add icons here
 import { useMediaQuery } from 'react-responsive';
-
-const Navbar = () => {
+import img from '../../assets/image-removebg-preview.png'
+const Navbar = ({toggleBackgroundColor}) => {
     const [toggle, setToogle] = useState(false)
     const [activeLink, setActiveLink] = useState('')
 
@@ -26,6 +26,7 @@ const Navbar = () => {
         { id: 'education', label: 'Education', icon: <FaGraduationCap /> },
         { id: 'skills', label: 'Skills', icon: <FaTools /> },
         { id: "projects", label: "Projects", icon: <FaCode /> },
+        { id: "blogs", label: "Blogs", icon: <FaBlog /> },
         { id: 'contact', label: 'Contact', icon: <FaEnvelope /> }
     ];
 
@@ -33,9 +34,10 @@ const Navbar = () => {
         <li key={item.id}>
             <a href={`#${item.id}`}
                 onClick={() => handleColor(item.id)} 
-                className={`flex items-center text-slate-200 font-semibold md:pt-0 lg:pt-0 pt-3 hover:text-teal-400 ${activeLink === item.id ? 'text-teal-400' : ''}`}>
-                <span className="mr-2 lg:mr-1 md:mr-1 text-xl lg:text-[16px] md:text-[16px] font-bold">{item.icon}</span> {/* Display the icon */}
-                {item.label}
+                style={activeLink === item.id ? { textShadow: '0 0 5px #38a89d, 0 0 10px #2e5c59' } : {}}
+                className={`flex  items-center text-white lg:font-semibold md:font-semibold  md:pt-0 lg:pt-0 pt-4 hover:text-teal-400 ${activeLink === item.id ? 'text-teal-400' : ''}`}>
+                <span className="mr-2 lg:mr-0 md:mr-0 text-2xl lg:text-[12px] md:text-[12px] font-serif ">{item.icon}</span> {/* Display the icon */}
+                <span className='font-serif '>{item.label}</span>
             </a>
         </li>
     ));
@@ -50,11 +52,12 @@ const Navbar = () => {
                 <div className="drawer z-10 fixed">
                     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content ">
-                        <div className='flex justify-between items-center px-5 pt-5'>
-                            <label htmlFor="my-drawer-2" className="drawer-button ">
+                        <div className='flex justify-between items-center px-7 pt-5'>
+                            <label htmlFor="my-drawer-2" className="drawer-button bg-stone-200 bg-opacity-10 p-[0.15rem] text-slate-900 rounded-md" style={{color: 'transparent'}}>
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     className="h-7 font-bold text-white w-7"
-                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" 
+                                    style={{ opacity: 0.7 }} >
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                                         d="M4 6h16M4 12h8m-8 6h16" />
                                 </svg>
@@ -67,9 +70,30 @@ const Navbar = () => {
                     </div>
                     <div className="drawer-side">
                         <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                        <ul className="menu bg-slate-900 pt-10 text-white min-h-full w-80 p-4">
+                        
+                        <div className="menu bg-slate-900 pt-12 text-white min-h-full w-80 p-4">
+                            <div className='flex flex-col justify-center items-center'>
+                               <figure className=''>
+                               <img  className='rounded-b-full  w-[100px] h-[110px] mx-auto  shadow-3xl  border-4 border-none' src={img} alt="" />
+                               </figure>
+                               <p className='pt-3 font-poppins text-[10px]'>Mst. Chadnee</p>
+                               <p className='pt- text-yellow-600 font-poppins text-[12px]'>MERN stack web developer</p>
+                               <div className='flex gap-3  mt-3 text-center'>
+                        <a href="https://www.facebook.com/chadnee.akhter.73?mibextid=ZbWKwL">
+                        <button style={{ boxShadow: "0 0  1px 1px #2e5c59" }} className='rounded-md border-2 border-emerald-800 p-3  text-white hover:bg-emerald-800 hover:text-white hover:shadow-lg hover:shadow-amber-200'><FaFacebook></FaFacebook></button>
+                        </a> 
+                        <button style={{ boxShadow: "0 0  1px 1px #2e5c59" }} className='rounded-md border-2 border-emerald-800 p-3  text-white hover:bg-emerald-800 hover:text-white hover:shadow-lg hover:shadow-amber-200'><FaGithub></FaGithub></button>
+                        <button style={{ boxShadow: "0 0  1px 1px #2e5c59" }} className='rounded-md border-2 border-emerald-800 p-3  text-white hover:bg-emerald-800 hover:text-white hover:shadow-lg hover:shadow-amber-200'><FaTwitter></FaTwitter></button>
+                        <a href='https://www.linkedin.com/in/mst-chadnee-akhter-40b280318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app '>
+                        <button style={{ boxShadow: "0 0 1px 1px #2e5c59" }} className='rounded-md border-2 border-emerald-800 p-3  text-white hover:bg-emerald-800 hover:text-white hover:shadow-lg hover:shadow-amber-200'><FaLinkedin></FaLinkedin></button>
+                        </a>
+                    </div>
+                            </div>
+                            <ul className='mt-8'>
                             {nav} {/* Navbar list with icons */}
-                        </ul>
+                            </ul>
+                            
+                        </div>
                     </div>
                 </div>
             }
@@ -81,11 +105,12 @@ const Navbar = () => {
                         <div> <a className="btn btn-ghost text-xl text-white">
                             <span className='text-4xl' ><FaCode /></span> Mst. Chadnee
                         </a></div>
-                        <div className="navbar-center hidden lg:flex">
-                            <ul  className="menu menu-horizontal px-1 font-bold font-serif text-white">
+                        <div className="  flex items-center justify-center">
+                            <ul  className="menu menu-horizontal px-1 font-serif ">
                                 {nav} {/* Navbar list without icons (for large devices) */}
                             </ul>
                         </div>
+                        
                     </div>
                 )
             }

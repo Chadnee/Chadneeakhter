@@ -5,14 +5,14 @@ import { FaFacebook, FaGithub, FaLinkedin, FaLocationArrow, FaTwitter } from "re
 
 const Footer = () => {
   return (
-    <div className='lg:pb-20 pb-10 md:pb-20 lg:pt-56 pt-20 md:pt-56 font-titilliumWeb'>
+    <div className='lg:pb-20 w-full md:m pb-10 md:pb-20 lg:pt-28 pt-5 md:pt-28 font-titilliumWeb'>
       <footer className="  text-white ">
-        <p className='text-center  tracking-wider  mb-20 md:mb-24 lg:mb-24  text-blue-900 text-xl opacity-90  lg:-ml-5 md:-ml-5'>Available in 24/7</p>
+        <p className='text-center  tracking-wider  mb-12 md:mb-24 lg:mb-24  text-amber-400 text-xl opacity-90  lg:-ml-5 md:-ml-5'>Available in 24/7</p>
 
         <nav className=''>
-          <div className="flex md:flex-row lg:flex-row flex-col gap-10 md:gap-12 lg:gap-12  justify-between w-9/12 md:text-[13px] lg:text-[13px] tracking-wide mx-auto font-roboto pb-16 items-center">
+          <div className="flex md:flex-row md:font-bold lg:font-bold lg:flex-row flex-col gap-5 md:gap-12 lg:gap-12  justify-between md:text-[13px] lg:text-[13px] tracking-wide mx-auto font-poppins pb-20 lg:pb-28 md:pb-28 items-center">
             <span className='flex flex-col justify-center items-center gap-2'>
-              <span className='text-xl'><BsTelephonePlus></BsTelephonePlus></span>
+              <span className='text-xl font-bold '><BsTelephonePlus></BsTelephonePlus></span>
               <span>01704203341</span>
             </span>
             <span className='flex flex-col justify-center items-center gap-2'>

@@ -2,7 +2,7 @@ import React from 'react';
 import Home from '../../Components/Home/Home/Home';
 import Navbar from '../../Shared/Navbar/Navbar';
 import Footer from '../../Shared/Footer/Footer';
-
+import img from '../../assets/image-removebg-preview.png'
 const Main = () => {
     
         
