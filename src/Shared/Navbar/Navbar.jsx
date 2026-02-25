@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaCode, FaHome, FaUser, FaGraduationCap, FaTools, FaEnvelope, FaMoon, FaBlog, FaFacebook, FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'; // Add icons here
 import { useMediaQuery } from 'react-responsive';
-import img from '../../assets/image-removebg-preview.png'
+import profile from '../../assets/profile.png'
 const Navbar = ({toggleBackgroundColor}) => {
     const [toggle, setToogle] = useState(false)
     const [activeLink, setActiveLink] = useState('')
@@ -31,25 +31,27 @@ const Navbar = ({toggleBackgroundColor}) => {
     ];
 
     const nav = navItems.map((item) => (
-        <li key={item.id}>
+        <li key={item.id} className=''>
             <a href={`#${item.id}`}
                 onClick={() => handleColor(item.id)} 
                 style={activeLink === item.id ? { textShadow: '0 0 5px #38a89d, 0 0 10px #2e5c59' } : {}}
-                className={`flex  items-center text-white lg:font-semibold md:font-semibold  md:pt-0 lg:pt-0 pt-4 hover:text-teal-400 ${activeLink === item.id ? 'text-teal-400' : ''}`}>
-                <span className="mr-2 lg:mr-0 md:mr-0 text-2xl lg:text-[12px] md:text-[12px] font-serif ">{item.icon}</span> {/* Display the icon */}
+                className={`flex items-center text-white lg:font-semibold md:font-semibold  md:pt-0 lg:pt-0 pt-4 hover:text-teal-400 ${activeLink === item.id ? 'text-teal-400' : ''}`}>
+                <span className="mr-2 lg:mr-0 md:mr-0 text-[22px] lg:text-[12px] md:text-[12px] font-serif">{item.icon}</span> {/* Display the icon */}
                 <span className='font-serif '>{item.label}</span>
             </a>
         </li>
     ));
 
     const isSmallDevice = useMediaQuery({ query: '(max-width: 600px)' });
+    const isLargeDevice = useMediaQuery({ query: '(min-width: 1024px)' });
+    const isSmallAndMediumDevice = useMediaQuery({query: '(max-width:1023px)'})
     const isMediumOrLargeDevice = useMediaQuery({ query: '(min-width: 601px)' });
 
     return (
-        <div className='md:pb-0 lg:pb-0 pb-6'>
+        <div className='md:pb-0 lg:pb-0 pb-6  '>
             {
-                isSmallDevice &&
-                <div className="drawer z-10 fixed">
+                isSmallAndMediumDevice &&
+                <div className="drawer z-10 fixed ">
                     <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content ">
                         <div className='flex justify-between items-center px-7 pt-5'>
@@ -71,25 +73,25 @@ const Navbar = ({toggleBackgroundColor}) => {
                     <div className="drawer-side">
                         <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                         
-                        <div className="menu bg-slate-900 pt-12 text-white min-h-full w-80 p-4">
-                            <div className='flex flex-col justify-center items-center'>
+                        <div className="menu bg-slate-900 pt-8 text-white min-h-full w-72 p-4">
+                            <div className='flex flex-col justify-center items-center '>
                                <figure className=''>
-                               <img  className='rounded-b-full  w-[100px] h-[110px] mx-auto  shadow-3xl  border-4 border-none' src={img} alt="" />
+                               <img  className=' w-full h-full object-cover mx-auto -ml-3 shadow-3xl' src={profile} alt="" />
                                </figure>
-                               <p className='pt-3 font-poppins text-[10px]'>Mst. Chadnee</p>
-                               <p className='pt- text-yellow-600 font-poppins text-[12px]'>MERN stack web developer</p>
-                               <div className='flex gap-3  mt-3 text-center'>
+                               <p className='pt-3 font-poppins text-[11px]'>Mst. Chadnee</p>
+                               <p className='pt- text-yellow-600 font-poppins text-[13px]'>MERN stack web developer</p>
+                               <div className='flex gap-4  mt-3 text-center'>
                         <a href="https://www.facebook.com/chadnee.akhter.73?mibextid=ZbWKwL">
-                        <button style={{ boxShadow: "0 0  1px 1px #2e5c59" }} className='rounded-md border-2 border-emerald-800 p-3  text-white hover:bg-emerald-800 hover:text-white hover:shadow-lg hover:shadow-amber-200'><FaFacebook></FaFacebook></button>
+                        <button className='rounded-md border-2 border-[#212d51] p-3  text-white shadow-[0_0_2px_2px_#222b43]  hover:bg-[#212d51] hover:text-white hover:shadow-lg hover:shadow-[#222b43]'><FaFacebook></FaFacebook></button>
                         </a> 
-                        <button style={{ boxShadow: "0 0  1px 1px #2e5c59" }} className='rounded-md border-2 border-emerald-800 p-3  text-white hover:bg-emerald-800 hover:text-white hover:shadow-lg hover:shadow-amber-200'><FaGithub></FaGithub></button>
-                        <button style={{ boxShadow: "0 0  1px 1px #2e5c59" }} className='rounded-md border-2 border-emerald-800 p-3  text-white hover:bg-emerald-800 hover:text-white hover:shadow-lg hover:shadow-amber-200'><FaTwitter></FaTwitter></button>
+                        <button className='rounded-md border-2 border-[#212d51] p-3  text-white shadow-[0_0_2px_2px_#222b43]  hover:bg-[#222b43] hover:text-white hover:shadow-lg hover:shadow-[#222b43]'><FaGithub></FaGithub></button>
+                        <button className='rounded-md border-2 border-[#212d51] p-3  text-white shadow-[0_0_2px_2px_#222b43]  hover:bg-[#222b43] hover:text-white hover:shadow-[#222b43]'><FaTwitter></FaTwitter></button>
                         <a href='https://www.linkedin.com/in/mst-chadnee-akhter-40b280318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app '>
-                        <button style={{ boxShadow: "0 0 1px 1px #2e5c59" }} className='rounded-md border-2 border-emerald-800 p-3  text-white hover:bg-emerald-800 hover:text-white hover:shadow-lg hover:shadow-amber-200'><FaLinkedin></FaLinkedin></button>
+                        <button className='rounded-md border-2 border-[#212d51] p-3  text-white shadow-[0_0_2px_2px_#222b43]  hover:bg-[#222b43] hover:text-white hover:shadow-lg hover:shadow-[#222b43]'><FaLinkedin></FaLinkedin></button>
                         </a>
                     </div>
                             </div>
-                            <ul className='mt-8'>
+                            <ul className='mt-7'>
                             {nav} {/* Navbar list with icons */}
                             </ul>
                             
@@ -99,19 +101,22 @@ const Navbar = ({toggleBackgroundColor}) => {
             }
 
             {
-                isMediumOrLargeDevice &&
+                isLargeDevice &&
                 (
-                    <div className='flex justify-between fixed top-0 w-full bg-opacity-100 py-3 z-20 font-bold font-serif px-20 pt-4'>
-                        <div> <a className="btn btn-ghost text-xl text-white">
-                            <span className='text-4xl' ><FaCode /></span> Mst. Chadnee
+                   <div className='fixed top-0 left-0 right-0 z-20'>
+                      <div className='flex justify-between mx-20 bg-opacity-100 py-3 font-bold font-serif pt-4'>
+                        <div> <a className="btn p-0 btn-ghost lg:text-xl md:text-[10px] text-white  flex gap-1 items-center">
+                            <span className='' ><FaCode /></span> 
+                            <span>Mst. Chadnee</span>
                         </a></div>
                         <div className="  flex items-center justify-center">
-                            <ul  className="menu menu-horizontal px-1 font-serif ">
+                            <ul  className="menu menu-horizontal font-serif p-0">
                                 {nav} {/* Navbar list without icons (for large devices) */}
                             </ul>
                         </div>
                         
                     </div>
+                   </div>
                 )
             }
         </div>

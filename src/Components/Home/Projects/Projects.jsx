@@ -4,9 +4,14 @@ import { FaArrowCircleRight, FaArrowRight, FaGithub, FaGithubAlt } from 'react-i
 import carnival from '../../../assets/carnival.png'
 import foodhub from '../../../assets/foodhub.png'
 import emars from '../../../assets/emars.png'
+import technoUniversity from '../../../assets/technoUniversity.jpg'
 import { TbBrandGithub } from "react-icons/tb";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { BsCart4 } from "react-icons/bs";
+import { IoRestaurantOutline } from "react-icons/io5";
+import { LiaSchoolSolid } from "react-icons/lia";
+
 
 // Import Swiper styles
 // import 'swiper/css';
@@ -49,66 +54,85 @@ const Projects = () => {
 
 
     const projects = [
-        {
+        {   
+            title: "E-commerece Platform",
             name: "E-Mars",
+            icon:<BsCart4/>,
             image: emars,
             longDescription: "It is an e-commerce website built with modern technologies such as React, JavaScript, Node.js, Express.js , Firebase & GitHub. Tailwind CSS is used for responsive design, though Bootstrap could be an alternative. The frontend features product categories, a review system, shopping cart, and payment integration. The backend, powered by Node.js, Express.js, and MongoDB, manages the database and admin panel. Admin functionalities include product management, customer bookings, and a dashboard. The site is fully responsive, with layouts tailored for both large and small devices. Feel free to explore the site for more details.",
-            shortDescription: "A responsive E-commerce site with React, Node.js, and MongoDB. It consist a payment system, Admin side and client side. firebase, github & vercel is refered for hosting site smoothly suggested.",
+            shortDescription: "A responsive E-commerce site with React , Javascript and Node JS for both frontend and backend side with Pyamnet system.",
             github: "https://github.com/Chadnee/Emars-server",
             liveSite: "https://e-mars-7ef3e.web.app/"
         },
-        {
-            name: "Carnival",
-            image: carnival,
-            longDescription: "I built a hospital website using modern web technologies including React, JavaScript, Tailwind CSS for the frontend, and MongoDB, Node.js, and Express.js for the backend. The website provides essential services like patient management, appointment scheduling, and doctor profiles. It incorporates dynamic data handling via MongoDB, a responsive user interface powered by Tailwind CSS, and efficient backend operations managed by Express.js and Node.js. The website integrates dynamic features like patient data handling and appointment booking, offering a seamless user experience. The site includes patient management, appointment scheduling, and dynamic data",
-            shortDescription: "A Hospital site using React, javascript, tailwind css and express js. A social server is stayed here with treatment sample. A lots of doctors information is included in mongodb",
-            github: "https://github.com/Chadnee/Carnival-client",
-            liveSite: "https://clinics-carnival-eb470.web.app/"
+        // {   
+        //     title: "Clinicical Platform",
+        //     name: "Carnival",
+        //     image: carnival,
+        //     longDescription: "I built a hospital website using modern web technologies including React, JavaScript, Tailwind CSS for the frontend, and MongoDB, Node.js, and Express.js for the backend. The website provides essential services like patient management, appointment scheduling, and doctor profiles. It incorporates dynamic data handling via MongoDB, a responsive user interface powered by Tailwind CSS, and efficient backend operations managed by Express.js and Node.js. The website integrates dynamic features like patient data handling and appointment booking, offering a seamless user experience. The site includes patient management, appointment scheduling, and dynamic data",
+        //     shortDescription: "A Hospital site using React, javascript, tailwind css and express js. A social server is stayed here with treatment sample. A lots of doctors information is included in mongodb",
+        //     github: "https://github.com/Chadnee/Carnival-client",
+        //     liveSite: "https://clinics-carnival-eb470.web.app/"
+        // },
+                {
+            title: "Educational Platform",
+            name: "Techno. University",
+            icon:<LiaSchoolSolid/>,
+            image: technoUniversity,
+            longDescription: "A restaurant responsive website using modern web technologies including React, JavaScript, Tailwind CSS for the frontend, and MongoDB, Node.js, and Express.js for the backend. The website provides essential services like menu management, online ordering, and customer feedback. It incorporates dynamic data handling via MongoDB, a responsive user interface powered by Tailwind CSS, and efficient backend operations managed by Express.js and Node.js. The website integrates dynamic features like online orders and menu updates, offering a seamless user experience. The site includes menu management, ordering, and customer feedback.",
+            shortDescription: "A University site build with React, Redux, Typescript and Ant Design, which makes a dynamic role based platform",
+            github: "https://github.com/Chadnee/FoodHub_resturant_client",
+            liveSite: "https://github.com/Chadnee/University_frontend"
         },
         {
+            title: "Resturant Platform",
             name: "Food-Hub",
+            icon:<IoRestaurantOutline/>,
             image: foodhub,
             longDescription: "A restaurant responsive website using modern web technologies including React, JavaScript, Tailwind CSS for the frontend, and MongoDB, Node.js, and Express.js for the backend. The website provides essential services like menu management, online ordering, and customer feedback. It incorporates dynamic data handling via MongoDB, a responsive user interface powered by Tailwind CSS, and efficient backend operations managed by Express.js and Node.js. The website integrates dynamic features like online orders and menu updates, offering a seamless user experience. The site includes menu management, ordering, and customer feedback.",
-            shortDescription: "A responisve Restaurant site with React, javascript, nodeJs, expressJS and MongoDB. Admin can add product or manage product by its mongodb database store",
+            shortDescription: "A responisve Restaurant site with React, javascript, Express js and mongodb database , a modern sophisticated UI design",
             github: "https://github.com/Chadnee/FoodHub_resturant_client",
             liveSite: "https://foodhub-client.web.app/"
-        }
+        },
+
     ];
 
 
 
     return (
-        <div ref={projectRef} className="mb-32  lg:-mx-20 md:-mx-20">
+        <div ref={projectRef} className="w-full mb-20 mt-16">
 
-            <div className='pb-12 md:pb-24 lg:pb-24 pt-24 md:pt-0 lg:pt-0'>
-                <p className='font-semibold lg:text-5xl text-4xl md:text-3xl font-poppins text-center text-white pb-12'>My recent works</p>
-
-                <p className='text-center text-amber-400 font-poppins w-full lg:w-8/12 md:w-8/12 mx-auto'>Discover My Most Recent and Impactful Web Development Projects and Creations, Showcasing Innovation and Technical Expertise with exploring more tools & applications.</p>
-            </div>
-            <div className='grid lg:grid-cols-3  md:grid-cols-3 grid-cols-1 md:gap-3 lg:gap-3 gap-5 w-full lg:w-11/12 mx-auto'>
+                <p className='font-semibold lg:text-4xl text-4xl md:text-3xl text-center text-white pb-3 lg:pb-6 md:pb-6'>Featured Project</p>
+            <hr className="border-[#1c2950]" />
+            <div className='mt-7 lg:mt-16 md:mt-16 grid lg:grid-cols-3  md:grid-cols-3 grid-cols-1 md:gap-7 lg:gap-7 gap-8 w-full lg:w-10/12 mx-auto'>
                 {
                     projects.map((item, index) => (<div key={item.name}
                         className={`transition-all duration-[2000ms] ease-out transform ${inView ? (index === 0 ? 'translate-x-0 opacity-100' : index === 1 ? 'translate-y-0 opacity-100' : 'translate-x-0 opacity-100')
                                 : (index === 0 ? '-translate-x-96 opacity-0' : index === 1 ? 'translate-y-96 opacity-0' : 'translate-x-96 opacity-0')
                             }`}>
-                        <div className='flex flex-col items-center lg:w-[390px] md:w-[390px] justify-center '>
-                            <div className='bg-slate-800 px-5 mx-auto py-5 rounded-xl border-amber-400'>
-                                <figure className='h-[200px] w-full transition-all duration-500 ease-in-out bg-gradient-to-r from-cyan-600 '>
-                                    <img className='object-cover h-full w-full mix-blend-overlay' src={item.image} alt={item.name} />
+                        <div className='flex flex-col items-center justify-center '>
+                            <div className='bg-slate-800/9 px-7 mx-auto py-5 rounded-xl shadow-[0_0_2px_2px_#28405d]'>
+                               <p className='text-white/90 font-semibold text-[22px] lg:text-[26px] md:text-[26px] flex items-center gap-2 pb-3'>
+                                <span className='text-3xl text-[#457fc7]'>{item.icon}</span>
+                               <span>{item.title}</span>
+                               </p>
+                                <figure className=' w-full transition-all duration-500 ease-in-out p-[3px] rounded-md bg-gradient-to-r from-[#7f7a7a] to-[#fff]'>
+                                {/* <figure className=' w-full transition-all duration-500 ease-in-out bg-gradient-to-r from-[#fae2e7] '> */}
+                                    <img className='object-cover rounded-md shadow-[0_0_10px_rgba(56,189,248,0.6)] h-full w-full ' src={item.image} alt={item.name} />
+                                    {/* <img className='object-cover h-full w-full mix-blend-overlay' src={item.image} alt={item.name} /> */}
                                 </figure>
-                                <p className='flex justify-between items-center pt-4 pb-6'>
-                                    <span className='text-amber-400 font-bold font-poppins text-3xl'> {item.name}</span>
-                                    <span className='flex items-center justify-center gap-5'>
-                                        <a href={item.github} className='rounded-full  border-2 bg-slate-800 border-amber-400 p-[6px] text-2xl  text-white'><TbBrandGithub ></TbBrandGithub ></a>
-                                        <a href={item.liveSite} target="_blank" rel="noopener noreferrer">
-                                            <button className='border-2 text-white border-amber-400 rounded-3xl px-5 py-[7px]'>
-                                                Live site
-                                            </button>
-                                        </a>
-                                    </span>
-                                </p>
-                                <p className='text-white  font-poppins'>{item.shortDescription}</p>
-                                <a href={item.liveSite} className='text-amber-400 font-poppins pt-7 flex  items-center gap-4'>See Project <span className='text-amber-400'><FaArrowRight className=''></FaArrowRight></span></a>
+                                <p className='text-white  pt-3 font-titilliumWeb text-[18px]'>{item.shortDescription}</p>
+                               <div className='flex justify-between items-center'>
+                                  <a href={item.liveSite} className='text-[#fdf9f9] font-poppins pt-7 flex  items-center gap-4'>
+                                    <button className='bg-gradient-to-b from-[#4476a8] to-[#28405d] text-[15px] px-4 py-1 rounded font-semibold flex gap-2 items-center'>
+                                        <span>Live Demo</span><FaArrowRight></FaArrowRight>
+                                    </button> 
+                                </a>
+                                 <a href={item.github} className='text-[#fdf9f9] font-poppins pt-7 flex  items-center gap-4'>
+                                    <button className='bg-gradient-to-b from-[#4476a8] to-[#28405d] text-[15px] px-4 py-1 rounded font-semibold flex gap-2 items-center'>
+                                     <span>Code</span> <FaGithub className='text-xl'></FaGithub >
+                                    </button> 
+                                </a>
+                               </div>
                             </div>
                         </div>
                     </div>))

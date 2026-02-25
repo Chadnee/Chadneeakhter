@@ -1,324 +1,571 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { FaCode, FaNode, FaGithub, FaBootstrap, FaFilePowerpoint } from 'react-icons/fa';
+import React, { useEffect, useRef, useState } from "react";
+import {
+  FaCode,
+  FaNode,
+  FaGithub,
+  FaBootstrap,
+  FaFilePowerpoint,
+} from "react-icons/fa";
 import { ImHtmlFive } from "react-icons/im";
-import { SiCss3, SiMongodb, SiExpress, SiPicardsurgeles, SiVercel, SiAxios, SiMicrosoftword, SiNetlify } from "react-icons/si";
-import { RiReactjsLine, RiFirebaseFill, RiTailwindCssFill, RiTailwindCssLine } from "react-icons/ri";
-import { TbBrandJavascript } from "react-icons/tb";
-import { MdGeneratingTokens } from "react-icons/md";
+import { DiMsqlServer } from "react-icons/di";
+import {
+  SiCss3,
+  SiMongodb,
+  SiExpress,
+  SiPicardsurgeles,
+  SiVercel,
+  SiAxios,
+  SiMicrosoftword,
+  SiNetlify,
+  SiGoogleearthengine,
+  SiTypescript,
+  SiNextdotjs,
+} from "react-icons/si";
+import {
+  RiReactjsLine,
+  RiFirebaseFill,
+  RiTailwindCssFill,
+  RiTailwindCssLine,
+} from "react-icons/ri";
+import { TbArrowsExchange, TbBrandJavascript, TbBrandRedux, TbBrandTypescript, TbPlugConnected } from "react-icons/tb";
+import { MdGeneratingTokens, MdOutlineDisplaySettings } from "react-icons/md";
 import { IoServer } from "react-icons/io5";
 import { BiLogoNetlify } from "react-icons/bi";
 import { PiMicrosoftExcelLogoFill } from "react-icons/pi";
 import { LuDatabaseBackup } from "react-icons/lu";
 import { SiHostinger } from "react-icons/si";
 import { GiSkills } from "react-icons/gi";
-import { Tooltip } from 'react-tooltip';
-import 'react-tooltip/dist/react-tooltip.css'; // Import the CSS for react-tooltip
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
-import SkillsCard from './SkillsCard';
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css"; // Import the CSS for react-tooltip
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import SkillsCard from "./SkillsCard";
+import { FaCloudArrowDown } from "react-icons/fa6";
+import { BsDatabaseFillCheck } from "react-icons/bs";
 
 const Skills = () => {
+  const skillItems = [
+    {
+      id: "frontend",
+      title: "Frontend",
+      icon:<MdOutlineDisplaySettings/>,
+      children: [
+        {
+          id: 0,
+          name: "React",
+          icon: <RiReactjsLine />,
+          value: 90,
+          number: "90%",
+          color: "text-blue-400",
+        },
+        {
+          id: 1,
+          name: "Javascript",
+          icon: <TbBrandJavascript />,
+          value: 85,
+          number: "85%",
+          color: "text-yellow-400",
+        },
+        {
+          id: 2,
+          name: "TypeScripts",
+          icon: <TbBrandTypescript />,
+          value: 85,
+          number: "85%",
+          color: "text-cyan-400",
+        },
+        {
+          id: 3,
+          name: "NextJS",
+          icon: <SiNextdotjs />,
+          value: 85,
+          number: "85%",
+          color: "text-emerald-500",
+        },
+        {
+          id: 4,
+          name: "Redux",
+          icon: <TbBrandRedux />,
+          value: 85,
+          number: "85%",
+          color: "text-[#0077b6]",
+        },
+        {
+          id: 4,
+          name: "Tailwind",
+          icon: <RiTailwindCssFill />,
+          value: 85,
+          number: "85%",
+          color: "text-cyan-600",
+        },
+        {
+          id: 4,
+          name: "Bootstrap",
+          icon: <FaBootstrap />,
+          value: 85,
+          number: "85%",
+          color: "text-violet-800",
+        },
+      ],
+    },
+    {
+      id: "backend",
+      title: "Backend",
+      icon: <SiGoogleearthengine/>,
+      children: [
+        {
+          id: 0,
+          name: "Node JS",
+          icon: <FaNode />,
+          value: 75,
+          number: "80%",
+          color: "text-cyan-400",
+        },
+        {
+          id: 1,
+          name: "Express JS",
+          icon: <SiExpress />,
+          value: 85,
+          number: "85%",
+          color: "text-blue-400",
+        },
+        {
+          id: 2,
+          name: "Server",
+          icon: <IoServer />,
+          value: 75,
+          number: "75%",
+          color: "text-slate-500",
+        },
 
+        {
+          id: 3,
+          name: "Middlewre",
+          icon: <TbArrowsExchange />,
+          value: 80,
+          number: "80%",
+          color: "text-cyan-400",
+        },
+      ],
+    },
+    {
+      id: "database&Api",
+      title: "Database & Api",
+      icon: <BsDatabaseFillCheck/>,
+      children: [
+        {
+          id: 0,
+          name: "MongoDB",
+          icon: <SiMongodb />,
+          value: 80,
+          number: "80%",
+          color: "text-emerald-500",
+        },
+        {
+          id: 1,
+          name: "Mongoose",
+          icon: <DiMsqlServer />,
+          value: 80,
+          number: "80%",
+          color: "text-emerald-500",
+        },
+        {
+          id: 2,
+          name: "RTK Query",
+          icon: <SiAxios />,
+          value: 75,
+          number: "75%",
+          color: "text-blue-600",
+        },
+        {
+          id: 3,
+          name: "Server",
+          icon: <IoServer />,
+          value: 75,
+          number: "75%",
+          color: "text-cyan-400",
+        },
+        {
+          id: 4,
+          name: "RESTFul Api",
+          icon: <TbPlugConnected />,
+          value: 75,
+          number: "75%",
+          color: "text-emerald-500",
+        },
+      ],
+    },
+    {
+      id: "hosting&Tools",
+      title: "Hosting & Tools",
+      icon: <FaCloudArrowDown/>,
+      children: [
+        {
+          id: 0,
+          name: "Firebase",
+          icon: <RiFirebaseFill />,
+          value: 70,
+          number: "70%",
+          color: "text-yellow-400",
+        },
+        {
+          id: 1,
+          name: "GitHub",
+          icon: <FaGithub />,
+          value: 75,
+          number: "75%",
+          color: "text-slate-300",
+        },
+        {
+          id: 2,
+          name: "Vercel",
+          icon: <SiVercel />,
+          value: 70,
+          number: "70%",
+          color: "text-emerald-500",
+        },
+        {
+          id: 3,
+          name: "Netlify",
+          icon: <BiLogoNetlify />,
+          value: 70,
+          number: "70%",
+          color: "text-teal-500",
+        },
 
+        {
+          id: 6,
+          name: "Axios",
+          icon: <SiAxios />,
+          value: 75,
+          number: "75%",
+          color: "text-blue-600",
+        },
+        {
+          id: 7,
+          name: "JWT Token",
+          icon: <MdGeneratingTokens />,
+          value: 75,
+          number: "75%",
+          color: "text-emerald-500",
+        },
+      ],
+    },
+  ];
+  const frontend = [
+    {
+      id: 0,
+      name: "React",
+      icon: <RiReactjsLine />,
+      value: 90,
+      number: "90%",
+      color: "text-blue-400",
+    },
+    {
+      id: 1,
+      name: "Javascript",
+      icon: <TbBrandJavascript />,
+      value: 85,
+      number: "85%",
+      color: "text-yellow-400",
+    },
+    {
+      id: 2,
+      name: "Vanilla CSS",
+      icon: <SiCss3 />,
+      value: 90,
+      number: "90%",
+      color: "text-slate-200",
+    },
+    {
+      id: 3,
+      name: "Bootstrap",
+      icon: <FaBootstrap />,
+      value: 90,
+      number: "80%",
+      color: "text-purple-600",
+    },
+    {
+      id: 4,
+      name: "Tailwind CSS",
+      icon: <RiTailwindCssLine />,
+      value: 90,
+      number: "90%",
+      color: "text-[#0096c7]",
+    },
+    {
+      id: 5,
+      name: "API",
+      icon: <IoServer />,
+      value: 90,
+      number: "90%",
+      color: "text-orange-300",
+    },
+    {
+      id: 6,
+      name: "Axios",
+      icon: <SiAxios />,
+      value: 75,
+      number: "75%",
+      color: "text-blue-600",
+    },
+    {
+      id: 7,
+      name: "JWT Token",
+      icon: <MdGeneratingTokens />,
+      value: 75,
+      number: "75%",
+      color: "text-green-600",
+    },
+  ];
+  const backend = [
+    {
+      id: 0,
+      name: "Node JS",
+      icon: <FaNode />,
+      value: 75,
+      number: "80%",
+      color: "text-cyan-400",
+    },
+    {
+      id: 1,
+      name: "Express JS",
+      icon: <SiExpress />,
+      value: 85,
+      number: "85%",
+      color: "text-blue-400",
+    },
+    {
+      id: 2,
+      name: "Server",
+      icon: <IoServer />,
+      value: 75,
+      number: "75%",
+      color: "text-amber-500",
+    },
+    {
+      id: 3,
+      name: "MongoDB",
+      icon: <SiMongodb />,
+      value: 80,
+      number: "80%",
+      color: "text-slate-200",
+    },
+    {
+      id: 4,
+      name: "Vercel",
+      icon: <SiVercel />,
+      value: 80,
+      number: "80%",
+      color: "text-cyan-400",
+    },
+  ];
 
-    const frontend = [
-        {
-            id: 0,
-            name: 'React',
-            icon: <RiReactjsLine />,
-            value: 90,
-            number: '90%',
-            color: 'text-blue-400'
-        },
-        {
-            id: 1,
-            name: 'Javascript',
-            icon: <TbBrandJavascript />,
-            value: 85,
-            number: '85%',
-            color: 'text-yellow-400'
-        },
-        {
-            id: 2,
-            name: 'Vanilla CSS',
-            icon: <SiCss3 />,
-            value: 90,
-            number: '90%',
-            color: 'text-slate-200'
-        },
-        {
-            id: 3,
-            name: 'Bootstrap',
-            icon: <FaBootstrap />,
-            value: 90,
-            number: '80%',
-            color: 'text-purple-600'
-        },
-        {
-            id: 4,
-            name: 'Tailwind CSS',
-            icon: <RiTailwindCssLine />,
-            value: 90,
-            number: '90%',
-            color: 'text-cyan-500'
-        },
-        {
-            id: 5,
-            name: 'API',
-            icon: <IoServer />,
-            value: 90,
-            number: '90%',
-            color: 'text-orange-300'
-        },
-        {
-            id: 6,
-            name: 'Axios',
-            icon: <SiAxios />,
-            value: 75,
-            number: '75%',
-            color: 'text-blue-600'
-        },
-        {
-            id: 7,
-            name: 'JWT Token',
-            icon: <MdGeneratingTokens />,
-            value: 75,
-            number: '75%',
-            color: 'text-green-600'
-        },
+  const hostingAndOthers = [
+    {
+      id: 0,
+      name: "Firebase",
+      icon: <RiFirebaseFill />,
+      value: 70,
+      number: "70%",
+      color: "text-yellow-400",
+    },
+    {
+      id: 1,
+      name: "GitHub",
+      icon: <FaGithub />,
+      value: 75,
+      number: "75%",
+      color: "text-slate-300",
+    },
+    {
+      id: 2,
+      name: "Netlify",
+      icon: <BiLogoNetlify />,
+      value: 70,
+      number: "70%",
+      color: "text-teal-500",
+    },
+    {
+      id: 3,
+      name: "Vercel",
+      icon: <SiVercel />,
+      value: 70,
+      number: "70%",
+      color: "text-green-400",
+    },
+    {
+      id: 4,
+      name: "MS Word",
+      icon: <SiMicrosoftword />,
+      value: 70,
+      number: "70%",
+      color: "text-blue-700",
+    },
+    {
+      id: 5,
+      name: "PowerPoint",
+      icon: <FaFilePowerpoint />,
+      value: 80,
+      number: "80%",
+      color: "text-orange-600",
+    },
+  ];
+  
+  // const tabItem = [
+  //     { id: 1, label: 'Front-end', content: frontend },
+  //     { id: 2, label: 'Back-end', content: backend },
+  //     { id: 3, label: 'Hosting & others', content: hostingAndOthers }
+  // ]
 
-    ]
-    const backend = [
+  // const [activeLink, setActiveLink] = useState(1);
+  // const [activeContent, setActiveContent] = useState([]);
+  // const [animating, setAnimating] = useState(false);  // Default animation state is false
+
+  // const handleTabStyle = (id) => {
+  //     setAnimating(false);
+  //     setActiveLink(id);
+  //     const selectedTab = tabItem.find(tab => tab.id === id);
+  //     setActiveContent(selectedTab.content);
+  //     // Trigger animation content has changed
+  //     setTimeout(() => {
+  //         setAnimating(true); // Trigger the zoom-in animation
+  //     }, 100); // Delay to ensure content change
+  // }
+
+  // const sectionsRef = useRef([]);
+
+  // useEffect(() => {
+  //     const observer = new IntersectionObserver(
+  //         (entries) => {
+  //             entries.forEach((entry) => {
+  //                 if (entry.isIntersecting) {
+  //                     setAnimating(true); // Trigger animation when the section comes into view
+  //                 } else {
+  //                     setAnimating(false); // Reset animation when section is out of view
+  //                 }
+  //             });
+  //         },
+  //         { threshold: 0.1 } // Trigger when 10% of the section is visible
+  //     );
+
+  //     sectionsRef.current.forEach((section) => {
+  //         if (section) {
+  //             observer.observe(section);
+  //         }
+  //     });
+
+  //     return () => {
+  //         sectionsRef.current.forEach((section) => {
+  //             if (section) {
+  //                 observer.unobserve(section);
+  //             }
+  //         });
+  //     };
+  // }, []);
+
+  // useEffect(() => {
+  //     const defaultTab = tabItem.find(tab => tab.id === activeLink);
+  //     setActiveContent(defaultTab.content);
+  // }, [activeLink]);
+
+  return (
+    <div className="w-full mb-20 mt-16">
+      <p className="text-4xl font-bold text-center pb-4 md:pb-8 lg:pb-8 text-[#e8eaed] ">
+        My Skills
+      </p>
+      <hr className="border-[#1c2950]" />
+      <div className="flex flex-col w-full gap-5 mt-10">
         {
-            id: 0,
-            name: 'Node JS',
-            icon: <FaNode />,
-            value: 75,
-            number: '80%',
-            color: 'text-green-600'
-        },
-        {
-            id: 1,
-            name: 'Express JS',
-            icon: <SiExpress />,
-            value: 85,
-            number: '85%',
-            color: 'text-blue-400'
-        },
-        {
-            id: 2,
-            name: 'Server',
-            icon: <IoServer />,
-            value: 75,
-            number: '75%',
-            color: 'text-amber-500'
-        },
-        {
-            id: 3,
-            name: 'MongoDB',
-            icon: <SiMongodb />,
-            value: 80,
-            number: '80%',
-            color: 'text-slate-200'
-        },
-        {
-            id: 4,
-            name: 'Vercel',
-            icon: <SiVercel />,
-            value: 80,
-            number: '80%',
-            color: 'text-cyan-400'
+       skillItems.map(items => (
+            <SkillsCard  key={items.id} title = {items?.title} icon={items?.icon} skills = {items?.children}></SkillsCard>
+       
+       ))
         }
-    ]
-
-    const hostingAndOthers = [
-        {
-            id: 0,
-            name: 'Firebase',
-            icon: <RiFirebaseFill />,
-            value: 70,
-            number: '70%',
-            color: 'text-yellow-400'
-        },
-        {
-            id: 1,
-            name: 'GitHub',
-            icon: <FaGithub />,
-            value: 75,
-            number: '75%',
-            color: 'text-slate-300'
-        },
-        {
-            id: 2,
-            name: 'Netlify',
-            icon: <BiLogoNetlify />,
-            value: 70,
-            number: '70%',
-            color: 'text-teal-500'
-        },
-        {
-            id: 3,
-            name: 'Vercel',
-            icon: <SiVercel />,
-            value: 70,
-            number: '70%',
-            color: 'text-green-400'
-        },
-        {
-            id: 4,
-            name: 'MS Word',
-            icon: <SiMicrosoftword />,
-            value: 70,
-            number: '70%',
-            color: 'text-blue-700'
-        },
-        {
-            id: 5,
-            name: 'PowerPoint',
-            icon: <FaFilePowerpoint />,
-            value: 80,
-            number: '80%',
-            color: 'text-orange-600'
-        },
-    ]
-
-    const tabItem = [
-        { id: 1, label: 'Front-end', content: frontend },
-        { id: 2, label: 'Back-end', content: backend },
-        { id: 3, label: 'Hosting & others', content: hostingAndOthers }
-    ]
-
-    const [activeLink, setActiveLink] = useState(1);
-    const [activeContent, setActiveContent] = useState([]);
-    const [animating, setAnimating] = useState(false);  // Default animation state is false
-
-    const handleTabStyle = (id) => {
-        setAnimating(false);
-        setActiveLink(id);
-        const selectedTab = tabItem.find(tab => tab.id === id);
-        setActiveContent(selectedTab.content);
-        // Trigger animation content has changed
-        setTimeout(() => {
-            setAnimating(true); // Trigger the zoom-in animation
-        }, 100); // Delay to ensure content change
-    }
-
-    const sectionsRef = useRef([]);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setAnimating(true); // Trigger animation when the section comes into view
-                    } else {
-                        setAnimating(false); // Reset animation when section is out of view
-                    }
-                });
-            },
-            { threshold: 0.1 } // Trigger when 10% of the section is visible
-        );
-
-        sectionsRef.current.forEach((section) => {
-            if (section) {
-                observer.observe(section);
-            }
-        });
-
-        return () => {
-            sectionsRef.current.forEach((section) => {
-                if (section) {
-                    observer.unobserve(section);
-                }
-            });
-        };
-    }, []);
-
-    useEffect(() => {
-        const defaultTab = tabItem.find(tab => tab.id === activeLink);
-        setActiveContent(defaultTab.content);
-    }, [activeLink]);
-
-    return (
-        <div className='mb-20 pt-24 md:pt-0 lg:pt-0'>
-            <style>
-                {`
-                .skill-icon {
-                    transition: transform 0.3s, box-shadow 0.3s;
-                }
-                .skill-icon:hover {
-                    transform: scale(1.2);
-                    box-shadow: 0 0 10px 2px #38a89d;
-                    border: 2px solid #38a89d;
-                }
-
-                @keyframes zoomIn {
-                    0% {
-                        transform: scale(0.5);
-                        opacity: 0;
-                    }
-                    100% {
-                        transform: scale(1);
-                        opacity: 1;
-                    }
-                }
-
-                .animate-zoomIn {
-                    animation: zoomIn 1s forwards;
-                }
-
-                .hidden-initially {
-                   opacity: 0;
-                   transform: scale(0.95); /* Slightly scale down when hidden */
-                   transition: opacity 2s ease, transform 0.5s ease; /* Smooth fade and scale */
-               }
-                   /* Add a visible class to smoothly show content */
-    .visible {
-        opacity: 1;
-        transform: scale(1); /* Scale back to normal size */
-        transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition when becoming visible */
-    }
-            `}
-            </style>
-            {/* ref={(el) => (sectionsRef.current[0] = el)} */}
-
-            <div className='mx-auto text-white flex flex-col w-full lg:w-9/12 md:w-9/12 justify-center'>
-            {/* 
-            ref={(el) => (sectionsRef.current[0] = el)}
-             className={animating ? 'animate-zoomIn visible' : 'hidden-initially'} */}
-                <div  >
-                    <p className='text-5xl font-bold text-center pb-12 md:pb-8 lg:pb-8 text-white '>
-                        My Skills
-                    </p>
-                    <div className='items-center w-full mx-auto md:w-9/12 lg:9/12'>
-                        <p className='text-center text-amber-400 font-poppins'>A Comprehensive Showcase of My Full-Stack Web Development Expertise: A quick learner mind with technologies demand.</p>
-                    </div>
-                </div>
-                {/* ref={(el) => (sectionsRef.current[1] = el)} 
-                className={animating ? 'animate-zoomIn visible ' : 'hidden-initially'}*/}
-                <div className='mt-12'>
-                    <div className='flex items-center text-white justify-center gap-5 mb-16'>
-                        {tabItem.map(tab => (
-                            <span
-                                key={tab.id}
-                                onClick={() => handleTabStyle(tab.id)}
-                                className={`font-poppins ${activeLink === tab.id ? 'rounded-2xl lg:px-6 px-4 md:px-6 py-1 border border-amber-500 ' : ''}`}>
-                                {tab.label}
-                            </span>
-                        ))}
-                    </div>
-
-                    <div className='grid gap-5 lg:gap-10 md:gap-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-3 transition-transform duration-500 ease-in-out'>
-                        {activeContent.map(item => <SkillsCard key={item.id} item={item} />)}
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Skills;
+//         <div className='mb-20 pt-24 md:pt-0 lg:pt-0'>
+//             <style>
+//                 {`
+//                 .skill-icon {
+//                     transition: transform 0.3s, box-shadow 0.3s;
+//                 }
+//                 .skill-icon:hover {
+//                     transform: scale(1.2);
+//                     box-shadow: 0 0 10px 2px #38a89d;
+//                     border: 2px solid #38a89d;
+//                 }
 
+//                 @keyframes zoomIn {
+//                     0% {
+//                         transform: scale(0.5);
+//                         opacity: 0;
+//                     }
+//                     100% {
+//                         transform: scale(1);
+//                         opacity: 1;
+//                     }
+//                 }
+
+//                 .animate-zoomIn {
+//                     animation: zoomIn 1s forwards;
+//                 }
+
+//                 .hidden-initially {
+//                    opacity: 0;
+//                    transform: scale(0.95); /* Slightly scale down when hidden */
+//                    transition: opacity 2s ease, transform 0.5s ease; /* Smooth fade and scale */
+//                }
+//                    /* Add a visible class to smoothly show content */
+//     .visible {
+//         opacity: 1;
+//         transform: scale(1); /* Scale back to normal size */
+//         transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition when becoming visible */
+//     }
+//             `}
+//             </style>
+//             {/* ref={(el) => (sectionsRef.current[0] = el)} */}
+
+//             <div className='mx-auto text-white flex flex-col w-full lg:w-9/12 md:w-9/12 justify-center'>
+//             {/*
+//             ref={(el) => (sectionsRef.current[0] = el)}
+//              className={animating ? 'animate-zoomIn visible' : 'hidden-initially'} */}
+//                 <div  >
+//                     <p className='text-5xl font-bold text-center pb-12 md:pb-8 lg:pb-8 text-white '>
+//                         My Skills
+//                     </p>
+//                     <div className='items-center w-full mx-auto md:w-9/12 lg:9/12'>
+//                         <p className='text-center text-amber-400 font-poppins'>A Comprehensive Showcase of My Full-Stack Web Development Expertise: A quick learner mind with technologies demand.</p>
+//                     </div>
+//                 </div>
+//                 {/* ref={(el) => (sectionsRef.current[1] = el)}
+//                 className={animating ? 'animate-zoomIn visible ' : 'hidden-initially'}*/}
+//                 <div className='mt-12'>
+//                     <div className='flex items-center text-white justify-center gap-5 mb-16'>
+//                         {tabItem.map(tab => (
+//                             <span
+//                                 key={tab.id}
+//                                 onClick={() => handleTabStyle(tab.id)}
+//                                 className={`font-poppins ${activeLink === tab.id ? 'rounded-2xl lg:px-6 px-4 md:px-6 py-1 border border-amber-500 ' : ''}`}>
+//                                 {tab.label}
+//                             </span>
+//                         ))}
+//                     </div>
+
+//                     <div className='grid gap-5 lg:gap-10 md:gap-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-3 transition-transform duration-500 ease-in-out'>
+//                         {activeContent.map(item => <SkillsCard key={item.id} item={item} />)}
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default Skills;
 
 // const sectionsRef = useRef([]);
 
@@ -349,8 +596,8 @@ export default Skills;
 //     };
 // }, []);
 
-
-{/* <style>
+{
+  /* <style>
 {`
 .skill-icon {
     transition: transform 0.3s, box-shadow 0.3s;
@@ -377,7 +624,8 @@ export default Skills;
 }
 
               .custom-tooltip {
-               */}
+               */
+}
 //color: #fff; /* Text color */
 //font-size: 10px; /* Text size */
 // border-radius: 4px; /* Border radius */
@@ -386,7 +634,8 @@ export default Skills;
 //`}
 //</style>
 
-{/* <p className='text-6xl font-bold text-center pb-24 md:pb-32 lg:pb-32 text-teal-400 '>
+{
+  /* <p className='text-6xl font-bold text-center pb-24 md:pb-32 lg:pb-32 text-teal-400 '>
 Skills
 </p>
 <div className='grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 mx-auto text-white gap-12 w-full lg:w-9/12 md:w-9/12 justify-center items-center'>
@@ -394,10 +643,12 @@ Skills
     <p style={{ fontWeight: 1000, fontSize: '2rem', textShadow: '1px 1px 2px black' }}
         className='text-2xl text-white pb-9'>My <span className='text-teal-400'>Skills</span>?</p>
     <p className='text-4xl'> What have I achieved for growing up?</p>
-</div> */}
+</div> */
+}
 
-//the grid of skills: 
-{/* <div ref={(el) => (sectionsRef.current[1] = el)} style={{ boxShadow: "0 0 5px 5px #38a89d" }} className='bg-teal-600 hover:bg-gradient-to-r hover:from-teal-800 hover:to-amber-200 shadow-sm flex gap-3 justify-center items-start transform scale-90 opacity-0'>
+//the grid of skills:
+{
+  /* <div ref={(el) => (sectionsRef.current[1] = el)} style={{ boxShadow: "0 0 5px 5px #38a89d" }} className='bg-teal-600 hover:bg-gradient-to-r hover:from-teal-800 hover:to-amber-200 shadow-sm flex gap-3 justify-center items-start transform scale-90 opacity-0'>
 <span className='pt-6 text-3xl ml-4'><FaCode /></span>
 <div className='pt-6 mr-4 mb-6'>
     <p className='font-bold font-serif'>Front-End Skills</p>
@@ -542,11 +793,14 @@ Skills
 <div className='text-center mt-8'>
     <button style={{ boxShadow: "0 0 5px 5px #38a89d" }} className='w-[150px] skill-icon  bg-amber-500 pb-1'>OK</button>
 </div>
-</div> */}
+</div> */
+}
 
 //render tooltip id which was used in grid of skills
 
-{/* Render Tooltip Component */ }
+{
+  /* Render Tooltip Component */
+}
 // <Tooltip id="html-tooltip " className='custom-tooltip' />
 // <Tooltip id="css-tooltip" className='custom-tooltip' />
 // <Tooltip id="react-tooltip" className='custom-tooltip' />

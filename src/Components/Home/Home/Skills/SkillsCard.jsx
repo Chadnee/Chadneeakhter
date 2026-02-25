@@ -1,26 +1,26 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
-const SkillsCard = ({ item }) => {
-    const { id, name, icon, value, number, color } = item;
+const SkillsCard = ({ title, icon, skills }) => {
+  console.log(title);
+  const skill = skills?.map(item => {console.log(item.color)})
 
-    
-    return (
-        <div
-            
-            style={{ boxShadow: "0 0 1px 1px #f59e0b" }}
-            className='bg-slate-800 w-[170px] lg:w-[240px] md:w-[240px] pb-3 lg:pt-5 pt-3 md:pt-5 md:pb-7 lg:pb-7 flex flex-col text-center justify-center transition-transform duration-500'
-        >
-         
-            <div className='flex flex-col justify-center items-center gap-3'>
-                <p className={`text-[60px] text-center ${color}`}>{icon}</p>
-                <p className='text-white text-[19px] font-poppins tracking-wider'>{name}</p>
-                <p className='flex gap-2 items-center px-5'>
-                    <progress className="progress bg-white progress-warning h-[10px] w-24 lg:w-36 md:w-36" value={value} max="100"></progress>
-                    <span className='text-white font-poppins tracking-wider'>{number}</span>
-                </p>
-            </div>
-        </div>
-    );
+  return (
+    <div className="flex flex-col gap-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-6 py-5 shadow-lg hover:shadow-2xl 
+                    transition duration-300">
+          <p className="text-white flex gap-2 items-center text-xl">
+            <span>{icon}</span>
+            <span>{title}</span>
+         </p>
+          <div className="flex gap-5 items-center flex-wrap">
+            {
+                skills?.map(item => (<p key={item.key} className="flex gap-[6px] items-center ">
+                       <span className={`${item.color} text-[28px]`}>{item.icon}</span>
+                       <span className="text-white text-[14px] tracking-widest">{item.name}</span>
+                </p>))
+            }
+          </div>
+    </div>
+  );
 };
 
 export default SkillsCard;

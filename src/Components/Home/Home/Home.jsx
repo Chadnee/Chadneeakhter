@@ -25,16 +25,11 @@ const Home = () => {
         <div className={`font-titilliumWeb ${bgColor}`} >
             
            {/* <Navbar toggleBackgroundColor={toggleBackgroundColor}></Navbar> */}
-                <div id="introduction"><Introduction></Introduction></div>
-                {/* <div className="flex justify-center items-center h-screen">
-      <button className="bg-blue-500 text-white px-6 py-3 rounded-full animate-float">
-        Floating Button
-      </button>
-    </div> */}
-                <div id="abilities"><Abilities></Abilities></div>
-                <div id="skills"><Skills></Skills></div>
-                <div id="projects"><Projects></Projects></div>
-                <div id="about"><About></About></div>
+                <div id="introduction" className='min-h-screen flex flex-col justify-center items-center'><Introduction></Introduction></div>
+                <div id="abilities" className=''><Abilities></Abilities></div>
+                <div id="skills" className='min-h-screen flex items-center'><Skills></Skills></div>
+                <div id="projects" className='min-h-screen flex items-center'><Projects></Projects></div>
+                <div id="about" className='min-h-screen flex items-center'><About></About></div>
                 {/* <div id="services"><Services></Services></div> */}
                 <div id="education"><Education></Education></div>
                 <div id="blogs"><Blogs></Blogs></div>

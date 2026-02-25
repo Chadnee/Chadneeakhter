@@ -12,7 +12,7 @@ const Abilities = () => {
        
     return (
         <div>
-            <div className='flex  mb-40 md:mb-44 lg:mb-44 flex-wrap justify-start lg:justify-center md:justify-center items-start lg:items-center md:items-center lg:tracking-widest md:tracking-widest gap-3 lg:gap-5 md:gap-5 uppercase font-bold text-xl'>
+            <div className='flex mb-20 md:mb-20 lg:mb-20 flex-wrap justify-start lg:justify-center md:justify-center items-start lg:items-center md:items-center lg:tracking-widest md:tracking-widest gap-3 lg:gap-5 md:gap-5 uppercase font-bold text-xl'>
                   <div className='flex gap-2 justify-center items-center bg-yellow-500 text-zinc-950 pt-1 pb-2 px-2 md:px-4 lg:px-4'>
                     <span className='text-3xl'><TbBrandJavascript></TbBrandJavascript></span>
                     <span>javascript</span>
