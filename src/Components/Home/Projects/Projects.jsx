@@ -101,7 +101,7 @@ const Projects = () => {
     return (
         <div ref={projectRef} className="w-full mb-20 mt-16">
 
-                <p className='font-semibold lg:text-4xl text-4xl md:text-3xl text-center text-white pb-3 lg:pb-6 md:pb-6'>Featured Project</p>
+                <p className='font-semibold lg:text-4xl text-[26px] md:text-3xl text-center text-[#f6f9fe] pb-3 lg:pb-6 md:pb-6'>Featured Project</p>
             <hr className="border-[#1c2950]" />
             <div className='mt-7 lg:mt-16 md:mt-16 grid lg:grid-cols-3  md:grid-cols-3 grid-cols-1 md:gap-7 lg:gap-7 gap-8 w-full lg:w-10/12 mx-auto'>
                 {
@@ -111,7 +111,7 @@ const Projects = () => {
                             }`}>
                         <div className='flex flex-col items-center justify-center '>
                             <div className='bg-slate-800/9 px-7 mx-auto py-5 rounded-xl shadow-[0_0_2px_2px_#28405d]'>
-                               <p className='text-white/90 font-semibold text-[22px] lg:text-[26px] md:text-[26px] flex items-center gap-2 pb-3'>
+                               <p className='text-[#f6f9fe]/90 font-semibold text-[22px] lg:text-[26px] md:text-[26px] flex items-center gap-2 pb-3'>
                                 <span className='text-3xl text-[#457fc7]'>{item.icon}</span>
                                <span>{item.title}</span>
                                </p>
@@ -120,7 +120,7 @@ const Projects = () => {
                                     <img className='object-cover rounded-md shadow-[0_0_10px_rgba(56,189,248,0.6)] h-full w-full ' src={item.image} alt={item.name} />
                                     {/* <img className='object-cover h-full w-full mix-blend-overlay' src={item.image} alt={item.name} /> */}
                                 </figure>
-                                <p className='text-white  pt-3 font-titilliumWeb text-[18px]'>{item.shortDescription}</p>
+                                <p className='text-[#f6f9fe]  pt-3 font-titilliumWeb text-[18px]'>{item.shortDescription}</p>
                                <div className='flex justify-between items-center'>
                                   <a href={item.liveSite} className='text-[#fdf9f9] font-poppins pt-7 flex  items-center gap-4'>
                                     <button className='bg-gradient-to-b from-[#4476a8] to-[#28405d] text-[15px] px-4 py-1 rounded font-semibold flex gap-2 items-center'>

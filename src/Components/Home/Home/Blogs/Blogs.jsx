@@ -62,8 +62,6 @@ const Blogs = () => {
 
             <div className='pb-12 md:pb-24 lg:pb-24 pt-24 md:pt-0 lg:pt-0'>
                 <p className='font-semibold lg:text-5xl text-4xl md:text-3xl font-poppins text-center text-white pb-12'>Recent Blogs</p>
-
-                <p className='text-center text-amber-400 font-poppins w-full lg:w-8/12 md:w-8/12 mx-auto'>Explore My Latest Insights and Articles on Web Development, Innovation, and Technical Mastery, Sharing Knowledge and Experiences with Emerging Tools and Technologies.</p>
             </div>
             <div className='grid lg:grid-cols-3  md:grid-cols-3 gap-5 md:gap-3 lg:gap-3 grid-cols-1 w-full lg:w-11/12 mx-auto'>
                 {

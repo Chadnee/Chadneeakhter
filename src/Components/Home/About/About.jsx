@@ -6,10 +6,10 @@ import { RiGithubLine } from "react-icons/ri";
 const About = () => {
   return (
     <div className="w-full py-10 ">
-      <div className=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center gap-8 md:w-10/12 w-full mx-auto">
+      <div className=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center md:gap-8 lg:gap-8 gap-12 md:w-10/12 w-full mx-auto">
         <div className="flex-1 flex flex-col items-center">
-          <figure className="h-full w-full">
-            <img src={profile2} className="h-full w-full object-cover" alt="" />
+          <figure className="h-[120%] w-full">
+            <img src={profile2} className="h-full w-full scale-125 object-contain" alt="" />
           </figure>
           {/* <p className="pt-3 font-poppins text-white">Mst. Chadnee</p>
           <p className="pt- text-yellow-600 font-poppins ">
@@ -39,9 +39,9 @@ const About = () => {
         </div>
 
         <div className="flex-1">
-          <p className="text-white text-3xl pb-4 pl-2">Why Hire Me ?</p>
+          <p className="text-white text-3xl pb-7 pl-2">Why Hire Me ?</p>
           <div className="flex flex-col item-center px-2 text-white font-titilliumWeb tracking-wider gap-2">
-            <p className="flex item-center   gap-2">
+            <p className="flex item-center gap-2">
               <span className="text-emerald-500 font-bold text-xl">✔</span>
               <span className="text-[14px]">Clean, scalable, and maintainable code architecture</span>
             </p>

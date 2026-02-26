@@ -31,8 +31,8 @@ const Home = () => {
                 <div id="projects" className='min-h-screen flex items-center'><Projects></Projects></div>
                 <div id="about" className='min-h-screen flex items-center'><About></About></div>
                 {/* <div id="services"><Services></Services></div> */}
-                <div id="education"><Education></Education></div>
-                <div id="blogs"><Blogs></Blogs></div>
+                <div id="education" className='min-h-screen flex items-center'><Education></Education></div>
+                {/* <div id="blogs"><Blogs></Blogs></div> */}
                 <div id="contact"><Contact></Contact></div>
                 
            
