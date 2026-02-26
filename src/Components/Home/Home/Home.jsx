@@ -14,15 +14,12 @@ import Blogs from './Blogs/Blogs';
 
 const Home = () => {
 
-    const [bgColor, setBgColor] = useState('bg-slate-900')
     
-    //function to toogle background color
-    const toggleBackgroundColor = () => {
-        setBgColor(prevColor => prevColor === 'bg-slate-900'? 'bg-slate-200':'bg-slate-900')
-    }
+    
+
    
     return (
-        <div className={`font-titilliumWeb ${bgColor}`} >
+        <div className="font-titilliumWeb bg-slate-900">
             
            {/* <Navbar toggleBackgroundColor={toggleBackgroundColor}></Navbar> */}
                 <div id="introduction" className='min-h-screen flex flex-col justify-center items-center'><Introduction></Introduction></div>
@@ -33,7 +30,7 @@ const Home = () => {
                 {/* <div id="services"><Services></Services></div> */}
                 <div id="education" className='min-h-screen flex items-center'><Education></Education></div>
                 {/* <div id="blogs"><Blogs></Blogs></div> */}
-                <div id="contact"><Contact></Contact></div>
+                <div id="contact" className='min-h-screen flex items-center'><Contact></Contact></div>
                 
            
 

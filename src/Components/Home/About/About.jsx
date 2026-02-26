@@ -8,7 +8,7 @@ const About = () => {
     <div className="w-full py-10 ">
       <div className=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 items-center md:gap-8 lg:gap-8 gap-12 md:w-10/12 w-full mx-auto">
         <div className="flex-1 flex flex-col items-center">
-          <figure className="h-[120%] w-full">
+          <figure className="w-full">
             <img src={profile2} className="h-full w-full scale-125 object-contain" alt="" />
           </figure>
           {/* <p className="pt-3 font-poppins text-white">Mst. Chadnee</p>

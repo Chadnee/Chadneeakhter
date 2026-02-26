@@ -129,7 +129,7 @@ const Education = () => {
             {/* <p className="text-3xl lg:text-5xl md:text-6xl font-bold text-center pb-24 md:pb-32 lg:pb-32 text-white">
         Education
       </p> */}
-      <hr className="border-[#1c2950]" />
+      <hr className="border-[#1c2950] w-full" />
       <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-2 grid-cols-1 gap-8 text-[#f6f9fe] w-full">
              <div className="flex flex-col items-center gap-8">
                     <div className="flex flex-col gap-2 bg-slate-800/9 w-full px-7 mx-auto py-5 rounded-xl shadow-[0_0_2px_2px_#28405d]">
