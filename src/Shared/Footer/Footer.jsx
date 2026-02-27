@@ -1,36 +1,26 @@
 import React from 'react';
 import { BsTelephonePlus } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
-import { FaFacebook, FaGithub, FaLinkedin, FaLocationArrow, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaLinkedin } from "react-icons/fa";
+import { AiOutlineMail, AiTwotoneMail } from "react-icons/ai";
+import { MdEmail } from 'react-icons/md';
 
 const Footer = () => {
   return (
-    <div className='lg:pb-20 w-full md:m pb-10 md:pb-20 lg:pt-28 pt-5 md:pt-28 font-titilliumWeb'>
-      <footer className="  text-white ">
-        <p className='text-center  tracking-wider  mb-12 md:mb-24 lg:mb-24  text-amber-400 text-xl opacity-90  lg:-ml-5 md:-ml-5'>Available in 24/7</p>
+   <div className='md:w-10/12 mx-auto flex flex-col items-center justify-center mb-20 gap-8'>
+                 <div className='flex gap-3 items-center justify-center w-full '>
+                    <hr className="w-full h-[1px] border-0 bg-[#5f5f64] shadow-[0_0_12px_#5f5f64]" />
+                    <p className='text-white text-nowrap font-bold md:text-3xl lg:text-3xl text-xl font-lato'>Connect with Me</p> 
+                    <hr className="w-full h-[1px] border-0 bg-[#5f5f64] shadow-[0_0_12px_#5f5f64]" />
+                 </div>
+                 <div className='flex gap-7 items-center justify-center text-white text-4xl font-bold'>
+                   <span className='bg-slate-700/90 p-3 rounded-xl '><FaFacebookF></FaFacebookF></span>
+                   <span className='bg-slate-700/90 p-3 rounded-xl '><MdEmail></MdEmail></span>
+                   <span className='bg-slate-700/90 p-3 rounded-xl '><FaLinkedin></FaLinkedin></span>
+                 </div>
+                 <hr className="w-full h-[1px] border-0 bg-[#5f5f64] shadow-[0_0_12px_#5f5f64]" />
 
-        <nav className=''>
-          <div className="flex md:flex-row md:font-bold lg:font-bold lg:flex-row flex-col gap-5 md:gap-12 lg:gap-12  justify-between md:text-[13px] lg:text-[13px] tracking-wide mx-auto font-poppins pb-20 lg:pb-28 md:pb-28 items-center">
-            <span className='flex flex-col justify-center items-center gap-2'>
-              <span className='text-xl font-bold '><BsTelephonePlus></BsTelephonePlus></span>
-              <span>01704203341</span>
-            </span>
-            <span className='flex flex-col justify-center items-center gap-2'>
-              <span className='text-xl'><MdEmail></MdEmail></span>
-              <span>mstchadneeakhter@gmail.com</span>
-            </span>
-            <span className='flex flex-col justify-center items-center gap-2'>
-              <span className='text-xl'><FaLocationArrow></FaLocationArrow></span>
-              <span>Dhaka, Bangladesh</span>
-            </span>
-
-          </div>
-        </nav>
-        <aside className='text-center text-slate-400'>
-          <p>© Mst Chadnee Akhter || web Developer || {new Date().getFullYear()} - All rights are reserved</p>
-        </aside>
-      </footer>
-    </div>
+                 <p className='text-[#d3d1d1] text-center -mt-2 font-semibold tracking-wider text-[17px]'> <span className='text-xl'>©</span> {new Date().getFullYear()} Mst Chadnee. All Rights Reserved</p>
+   </div>
   );
 };
 

@@ -11,7 +11,8 @@ const Main = () => {
             <div ><Navbar ></Navbar></div>
             <div className='w-full  lg:px-20 md:px-20 px-3'>
             <div className=''><Home></Home></div>
-            <div><Footer></Footer></div>
+            <div className='w-full flex items-center'></div>
+            <div className='md:-mt-24 lg:md:-mt-24 flex flex-col items-center'><Footer></Footer></div>
         </div>
         </div>
     );

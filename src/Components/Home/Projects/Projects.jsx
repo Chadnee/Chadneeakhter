@@ -106,7 +106,7 @@ const Projects = () => {
             <div className='mt-7 lg:mt-16 md:mt-16 grid lg:grid-cols-3  md:grid-cols-3 grid-cols-1 md:gap-7 lg:gap-7 gap-8 w-full lg:w-10/12 mx-auto'>
                 {
                     projects.map((item, index) => (<div key={item.name}
-                        className={`transition-all duration-[2000ms] ease-out transform ${inView ? (index === 0 ? 'translate-x-0 opacity-100' : index === 1 ? 'translate-y-0 opacity-100' : 'translate-x-0 opacity-100')
+                        className={`transition-all duration-2000 ease-out transform ${inView ? (index === 0 ? 'translate-x-0 opacity-100' : index === 1 ? 'translate-y-0 opacity-100' : 'translate-x-0 opacity-100')
                                 : (index === 0 ? '-translate-x-96 opacity-0' : index === 1 ? 'translate-y-96 opacity-0' : 'translate-x-96 opacity-0')
                             }`}>
                         <div className='flex flex-col items-center justify-center '>

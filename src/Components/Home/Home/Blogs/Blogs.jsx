@@ -66,7 +66,7 @@ const Blogs = () => {
             <div className='grid lg:grid-cols-3  md:grid-cols-3 gap-5 md:gap-3 lg:gap-3 grid-cols-1 w-full lg:w-11/12 mx-auto'>
                 {
                     blogPosts.map((item, index) => (<div key={item.name}
-                        className={`transition-all duration-[2000ms] ease-out transform ${inView ? (index === 0 ? 'translate-x-0 opacity-100' : index === 1 ? 'translate-y-0 opacity-100' : 'translate-x-0 opacity-100')
+                        className={`transition-all duration-2000 ease-out transform ${inView ? (index === 0 ? 'translate-x-0 opacity-100' : index === 1 ? 'translate-y-0 opacity-100' : 'translate-x-0 opacity-100')
                                 : (index === 0 ? '-translate-x-96 opacity-0' : index === 1 ? 'translate-y-96 opacity-0' : 'translate-x-96 opacity-0')
                             }`}>
                         <div className='flex flex-col items-center lg:w-[390px] md:w-[390px] justify-center '>
