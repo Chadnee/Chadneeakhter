@@ -1,87 +1,52 @@
 import React, { useEffect, useState, useRef } from "react";
-import { IoMdSchool } from "react-icons/io";
 import {
-  FaAlignRight,
-  FaCheck,
-  FaCode,
   FaGraduationCap,
   FaLayerGroup,
-  FaSchool,
   FaUniversity,
 } from "react-icons/fa";
-import { LiaSchoolSolid, LiaUniversitySolid } from "react-icons/lia";
-import Aos from "aos";
 import "aos/dist/aos.css"; // Import AOS CSS
-import { FaListCheck } from "react-icons/fa6";
-import { BsCheck2 } from "react-icons/bs";
-import { FiBookOpen } from "react-icons/fi";
 import { RiEqualizerFill } from "react-icons/ri";
 
-const Education = () => {
-  const education = [
-    {
-      id: 1,
-      icon: <IoMdSchool></IoMdSchool>,
-      name: "BBA (2020 - Present)",
-      fullForm: "Bachelor of Business Adminastration",
-      department: "MIS Department",
-      institution: "University of Dhaka",
-    },
-    {
-      id: 2,
-      icon: <FaSchool></FaSchool>,
-      name: "HSC (exam-2019)",
-      fullForm: "Higher Secondary Certificate",
-      department: "Business Studies (group)",
-      institution: "Carmichael College, Rangpur",
-    },
-    {
-      id: 3,
-      icon: <LiaSchoolSolid></LiaSchoolSolid>,
-      name: "SSC (exam-2017)",
-      fullForm: "Secondary School Certificate",
-      department: "Science (Group)",
-      institution: "Senpara High School, Rangpur",
-    },
-  ];
-  const leftSectionRef = useRef(null);
-  const rightSectionRef = useRef(null);
-  const [leftVisible, setLeftVisible] = useState(false);
-  const [rightVisible, setRightVisible] = useState(false);
-  const [isHovered, setHovered] = useState(null);
+const Qualifications = () => {
 
-  const handleMouseEnter = (id) => {
-    setHovered(id);
-  };
+  // const leftSectionRef = useRef(null);
+  // const rightSectionRef = useRef(null);
+  // const [leftVisible, setLeftVisible] = useState(false);
+  // const [rightVisible, setRightVisible] = useState(false);
+  // const [isHovered, setHovered] = useState(null);
 
-  const handleMouseLeave = () => {
-    setHovered(null);
-  };
+  // const handleMouseEnter = (id) => {
+  //   setHovered(id);
+  // };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (entry.target === leftSectionRef.current) {
-              setLeftVisible(true);
-            } else if (entry.target === rightSectionRef.current) {
-              setRightVisible(true);
-            }
-          }
-        });
-      },
-      { threshold: 0.1 }, // Start animation when 10% of the section is visible
-    );
+  // const handleMouseLeave = () => {
+  //   setHovered(null);
+  // };
 
-    if (leftSectionRef.current) observer.observe(leftSectionRef.current);
-    if (rightSectionRef.current) observer.observe(rightSectionRef.current);
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           if (entry.target === leftSectionRef.current) {
+  //             setLeftVisible(true);
+  //           } else if (entry.target === rightSectionRef.current) {
+  //             setRightVisible(true);
+  //           }
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.1 }, // Start animation when 10% of the section is visible
+  //   );
 
-    return () => {
-      if (leftSectionRef.current) observer.unobserve(leftSectionRef.current);
-      if (rightSectionRef.current) observer.unobserve(rightSectionRef.current);
-    };
-  }, []);
+  //   if (leftSectionRef.current) observer.observe(leftSectionRef.current);
+  //   if (rightSectionRef.current) observer.observe(rightSectionRef.current);
+
+  //   return () => {
+  //     if (leftSectionRef.current) observer.unobserve(leftSectionRef.current);
+  //     if (rightSectionRef.current) observer.unobserve(rightSectionRef.current);
+  //   };
+  // }, []);
 
   return (
     <div className="w-full pt-12 md:pt-8 lg:pt-8">
@@ -126,9 +91,6 @@ const Education = () => {
       </style>
      
      <div className="md:w-10/12 lg:w-10/12 w-full mx-auto flex flex-col items-center justify-center">
-            {/* <p className="text-3xl lg:text-5xl md:text-6xl font-bold text-center pb-24 md:pb-32 lg:pb-32 text-white">
-        Education
-      </p> */}
          <p className="text-4xl font-bold text-center pb-4 md:pb-6 lg:pb-6 text-[#e8eaed] ">
        Qualifications
       </p>
@@ -181,7 +143,7 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default Qualifications;
 
      {/* <div> */}
       {/* <div className='flex md:flex-row lg:flex-row flex-col justify-center items-center gap-10 text-center md:text-start lg:text-start lg:gap-48 md:gap-48'> */}

@@ -1,29 +1,26 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { FaCode, FaHome, FaUser, FaGraduationCap, FaTools, FaEnvelope, FaMoon, FaBlog, FaFacebook, FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa'; // Add icons here
 import { useMediaQuery } from 'react-responsive';
 import profile from '../../assets/profile.png'
 const Navbar = ({toggleBackgroundColor}) => {
-    const [toggle, setToogle] = useState(false)
     const [activeLink, setActiveLink] = useState('')
-
-    const toggleButton = () => {
-        setToogle(true)
-    }
+    const drawerRef = useRef(null);
 
     const handleColor = (id) => {
         setActiveLink(id)
         console.log(id)
-    }
 
-    const handleClose = () => {
-        setToogle(false);
-    };
+        //close the sidebar automatically after scrolling in small and medium device
+         if(drawerRef.current){
+            drawerRef.current.checked = false
+         }
+    }
 
     // Updated navItems array with icons
     const navItems = [
         { id: 'introduction', label: 'Home', icon: <FaHome /> },
         { id: 'about', label: 'About', icon: <FaUser /> },
-        { id: 'education', label: 'Education', icon: <FaGraduationCap /> },
+        { id: 'qualifications', label: 'Qualifications', icon: <FaGraduationCap /> },
         { id: 'skills', label: 'Skills', icon: <FaTools /> },
         { id: "projects", label: "Projects", icon: <FaCode /> },
         { id: "blogs", label: "Blogs", icon: <FaBlog /> },
@@ -52,7 +49,7 @@ const Navbar = ({toggleBackgroundColor}) => {
             {
                 isSmallAndMediumDevice &&
                 <div className="drawer z-10 fixed ">
-                    <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+                    <input id="my-drawer-2" type="checkbox" className="drawer-toggle"  ref={drawerRef}/>
                     <div className="drawer-content ">
                         <div className='flex justify-between items-center px-7 pt-5'>
                             <label htmlFor="my-drawer-2" className="drawer-button bg-stone-200 bg-opacity-10 p-[0.15rem] text-slate-900 rounded-md" style={{color: 'transparent'}}>

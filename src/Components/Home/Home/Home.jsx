@@ -1,15 +1,12 @@
 
 import Introduction from '../Introduction/Introduction';
 import About from '../About/About';
-import Services from './Services/Services';
 import Projects from '../Projects/Projects';
 import Skills from './Skills/Skills';
 import Contact from './Contact/Contact';
-import Education from './Education/Education';
 import Abilities from '../Abilities/Abilities';
-import { useState } from 'react';
-import Navbar from '../../../Shared/Navbar/Navbar';
 import Blogs from './Blogs/Blogs';
+import Qualifications from './Education/Qualifications';
 
 
 const Home = () => {
@@ -28,7 +25,7 @@ const Home = () => {
                 <div id="projects" className='min-h-screen flex items-center'><Projects></Projects></div>
                 <div id="about" className='min-h-screen flex items-center'><About></About></div>
                 {/* <div id="services"><Services></Services></div> */}
-                <div id="education" className='min-h-screen flex items-center'><Education></Education></div>
+                <div id="qualifications" className='min-h-screen flex items-center'><Qualifications></Qualifications></div>
                 {/* <div id="blogs"><Blogs></Blogs></div> */}
                 <div id="contact" className='min-h-screen flex items-center'><Contact></Contact></div>
                 
